@@ -1,29 +1,22 @@
 package com.example.dailypulse
 
-import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.safeContentPadding
-import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Text
+import androidx.compose.material3.Surface
 import androidx.compose.runtime.*
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.dailypulse.screens.AboutScreen
-import org.jetbrains.compose.resources.painterResource
-
-import dailypulse.composeapp.generated.resources.Res
-import dailypulse.composeapp.generated.resources.compose_multiplatform
+import com.example.dailypulse.articles.ArticlesViewModel
+import com.example.dailypulse.screens.ArticlesScreen
 
 @Composable
-@Preview
-fun App() {
+fun App(articlesViewModel: ArticlesViewModel) {
     MaterialTheme {
-        AboutScreen()
+        Surface(
+            modifier = Modifier.fillMaxSize(),
+            color = MaterialTheme.colorScheme.background
+        ) {
+            AppScaffold(articlesViewModel)
+        }
     }
 }
